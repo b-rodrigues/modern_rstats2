@@ -68,5 +68,40 @@
     "title": "2  Introduction",
     "section": "",
     "text": "https://cran.r-project.org/doc/FAQ/R-FAQ.html#What-is-R_003f↩︎\nhttps://cloud.r-project.org/bin/windows/base/↩︎\nhttps://cloud.r-project.org/bin/macosx/↩︎\nhttps://github.com/eddelbuettel/r2u↩︎\nhttps://posit.co/download/rstudio-desktop/↩︎\nhttps://posit.co/download/rstudio-desktop/↩︎"
+  },
+  {
+    "objectID": "chapter_1.html#panes",
+    "href": "chapter_1.html#panes",
+    "title": "3  Getting to know RStudio",
+    "section": "3.1 Panes",
+    "text": "3.1 Panes\nRStudio is divided into different panes. Each pane has a specific function. The image below shows some of these panes:\n\nknitr::include_graphics(\"images/rstudio_panes.png\")\n\n\n\n\nFigure 3.1: The different panes of RStudio.\n\n\n\n\nTake some time to look around what each pane shows you. Some panes are empty; for example the Plots pane or the Viewer pane. Plots shows you the plots you make. You can browse the plots and save them. We will see this in more detail in a later chapter. Viewer shows you previews of documents that you generate with R. More on this later. You can also minimize and maximize the panes by clicking these two buttons:\n\nknitr::include_graphics(\"images/rstudio_panes_min_max.png\")\n\n\n\n\nFigure 3.2: Minimize or maximize the panes."
+  },
+  {
+    "objectID": "chapter_1.html#console",
+    "href": "chapter_1.html#console",
+    "title": "3  Getting to know RStudio",
+    "section": "3.2 Console",
+    "text": "3.2 Console\nThe Console pane is where you can execute R code. Write the following in the console:\n\n2 + 3\n\nand you’ll get the answer, 5. However, do not write a lot of lines in the console. It is better write your code inside a script. Output is also shown inside the console.\n\nknitr::include_graphics(\"images/rstudio_console.png\")\n\n\n\n\nFigure 3.3: You can execute code by typing it in the console."
+  },
+  {
+    "objectID": "chapter_1.html#scripts",
+    "href": "chapter_1.html#scripts",
+    "title": "3  Getting to know RStudio",
+    "section": "3.3 Scripts",
+    "text": "3.3 Scripts\nInstead of writing code in the console, it is better to write code in a so-called script. Scripts are simple text files that can be written and executed by RStudio. To write a new script, click on the top-right icon and select “R script”:\n\nknitr::include_graphics(\"images/rstudio_new_script.png\")\n\n\n\n\nFigure 3.4: Select R Script to open an empty script.\n\n\n\n\nIn Figure 3.4, we see the user creating a new R script. If you have a background in the social sciences you might be familiar with STATA: STATA also uses scripts, colloquially called .do files. The C programming language uses .c files. R scripts have the .r or .R extension. But .R files are not the only type of files that you can edit with RStudio. We will explore other formats later in the book.\n\n3.3.1 The help pane\nThe Help pane allows you to consult documentation for R, its packages etc:\n\nknitr::include_graphics(\"images/rstudio_help.png\")\n\n\n\n\nFigure 3.5: Read the flipping manual.\n\n\n\n\nYou can also read the help file of a specific function by writing ?function in the console, where function is the function you want to know about.\nI highly recommend you take some time to check out the “CRAN Task Views”. These views provide a very nice summary of the different packages available for different scientific fields. For example, if you’re doing econometrics, you should read the CRAN Task View: Econometrics3.\nTake some time to browse the different CRAN Task Views here4.\n\n\n3.3.2 The Environment pane\nThe Environment pane shows every object created in the current section. It is especially useful if you have defined lists or have loaded data into R as it makes it easy to explore these more complex objects. As you will write code and create objects throughout a session, the environment pane will get more and more populated."
+  },
+  {
+    "objectID": "chapter_1.html#projects",
+    "href": "chapter_1.html#projects",
+    "title": "3  Getting to know RStudio",
+    "section": "3.4 Projects",
+    "text": "3.4 Projects\nOne of the best features of RStudio are projects. Creating a project is simple; simply click on the top right corner of RStudio and then “New Project”:\n\nknitr::include_graphics(\"images/rstudio_new_project.png\")\n\n\n\n\nFigure 3.6: Here is how you create a project.\n\n\n\n\nProjects make a lot of things easier, such as managing paths (more on this in the chapter about reading data). Another useful feature of projects is that the scripts you open in project A will stay open even if you switch to another project B, and then switch back to the project A again.\nYou can also use version control (with Git) inside a project. Version control is very useful, but I won’t discuss it in this book."
+  },
+  {
+    "objectID": "chapter_1.html#footnotes",
+    "href": "chapter_1.html#footnotes",
+    "title": "3  Getting to know RStudio",
+    "section": "",
+    "text": "https://posit.co/download/rstudio-desktop/↩︎\nhttps://shiny.posit.co/r/getstarted/next-steps/↩︎\nhttps://cran.r-project.org/web/views/Econometrics.html↩︎\nhttps://cran.r-project.org/web/views/↩︎"
   }
 ]

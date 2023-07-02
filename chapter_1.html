@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -182,7 +216,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#panes" id="toc-panes" class="nav-link active" data-scroll-target="#panes"><span class="header-section-number">3.1</span> Panes</a></li>
+  <li><a href="#console" id="toc-console" class="nav-link" data-scroll-target="#console"><span class="header-section-number">3.2</span> Console</a></li>
+  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts"><span class="header-section-number">3.3</span> Scripts</a>
+  <ul class="collapse">
+  <li><a href="#the-help-pane" id="toc-the-help-pane" class="nav-link" data-scroll-target="#the-help-pane"><span class="header-section-number">3.3.1</span> The help pane</a></li>
+  <li><a href="#the-environment-pane" id="toc-the-environment-pane" class="nav-link" data-scroll-target="#the-environment-pane"><span class="header-section-number">3.3.2</span> The Environment pane</a></li>
+  </ul></li>
+  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects"><span class="header-section-number">3.4</span> Projects</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/b-rodrigues/modern_rstats2/edit/main/chapter_1.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -204,8 +251,120 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>RStudio is an IDE (Integrated development environment) for the R programming language made by a company called Posit. You can install RStudio by visiting this <a href="https://posit.co/download/rstudio-desktop/">link</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Posit, also develops <a href="https://shiny.posit.co/">Shiny</a>, a package to create full-fledged web-apps. I am not going to cover Shiny in this book, since there’s already <a href="https://shiny.posit.co/r/getstarted/next-steps/">a lot</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> of material that you can learn from.</p>
+<p>Once you have installed RStudio, launch it and let’s go through the interface together.</p>
+<section id="panes" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="panes"><span class="header-section-number">3.1</span> Panes</h2>
+<p>RStudio is divided into different panes. Each pane has a specific function. The image below shows some of these panes:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rstudio_panes.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-rstudio_panes" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/rstudio_panes.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.1: The different panes of RStudio.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Take some time to look around what each pane shows you. Some panes are empty; for example the <em>Plots</em> pane or the <em>Viewer</em> pane. <em>Plots</em> shows you the plots you make. You can browse the plots and save them. We will see this in more detail in a later chapter. <em>Viewer</em> shows you previews of documents that you generate with R. More on this later. You can also minimize and maximize the panes by clicking these two buttons:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rstudio_panes_min_max.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-rstudio_panes_min_max" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/rstudio_panes_min_max.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.2: Minimize or maximize the panes.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="console" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="console"><span class="header-section-number">3.2</span> Console</h2>
+<p>The <em>Console</em> pane is where you can execute R code. Write the following in the console:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>and you’ll get the answer, <code>5</code>. However, do not write a lot of lines in the console. It is better write your code inside a script. Output is also shown inside the console.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rstudio_console.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-rstudio_console" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/rstudio_console.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.3: You can execute code by typing it in the console.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="scripts" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="scripts"><span class="header-section-number">3.3</span> Scripts</h2>
+<p>Instead of writing code in the console, it is better to write code in a so-called script. Scripts are simple text files that can be written and executed by RStudio. To write a new script, click on the top-right icon and select “R script”:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rstudio_new_script.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-rstudio_new_script" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/rstudio_new_script.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.4: Select R Script to open an empty script.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In <a href="#fig-rstudio_new_script">Figure&nbsp;<span>3.4</span></a>, we see the user creating a new R script. If you have a background in the social sciences you might be familiar with STATA: STATA also uses scripts, colloquially called <code>.do</code> files. The C programming language uses <code>.c</code> files. R scripts have the <code>.r</code> or <code>.R</code> extension. But <code>.R</code> files are not the only type of files that you can edit with RStudio. We will explore other formats later in the book.</p>
+<section id="the-help-pane" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="the-help-pane"><span class="header-section-number">3.3.1</span> The help pane</h3>
+<p>The <em>Help</em> pane allows you to consult documentation for R, its packages etc:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rstudio_help.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-rstudio_help" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/rstudio_help.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.5: Read the flipping manual.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>You can also read the help file of a specific function by writing <code>?function</code> in the console, where <code>function</code> is the function you want to know about.</p>
+<p>I highly recommend you take some time to check out the “CRAN Task Views”. These <em>views</em> provide a very nice summary of the different packages available for different scientific fields. For example, if you’re doing econometrics, you should read the <a href="https://cran.r-project.org/web/views/Econometrics.html">CRAN Task View: Econometrics</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p>Take some time to browse the different CRAN Task Views <a href="https://cran.r-project.org/web/views/">here</a><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+</section>
+<section id="the-environment-pane" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="the-environment-pane"><span class="header-section-number">3.3.2</span> The Environment pane</h3>
+<p>The <em>Environment</em> pane shows every object created in the current section. It is especially useful if you have defined lists or have loaded data into R as it makes it easy to explore these more complex objects. As you will write code and create objects throughout a session, the environment pane will get more and more populated.</p>
+</section>
+</section>
+<section id="projects" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="projects"><span class="header-section-number">3.4</span> Projects</h2>
+<p>One of the best features of RStudio are projects. Creating a project is simple; simply click on the top right corner of RStudio and then “New Project”:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rstudio_new_project.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-rstudio_new_project" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/rstudio_new_project.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.6: Here is how you create a project.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Projects make a lot of things easier, such as managing paths (more on this in the chapter about reading data). Another useful feature of projects is that the scripts you open in project A will stay open even if you switch to another project B, and then switch back to the project A again.</p>
+<p>You can also use version control (with Git) inside a project. Version control is very useful, but I won’t discuss it in this book.</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>https://posit.co/download/rstudio-desktop/<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>https://shiny.posit.co/r/getstarted/next-steps/<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>https://cran.r-project.org/web/views/Econometrics.html<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>https://cran.r-project.org/web/views/<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -572,4 +731,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/b-rodrigues/modern_rstats2/edit/main/chapter_1.qmd" class="toc-action">Edit this page</a></p></div></div></div></div></footer></body></html>
+</body></html>
