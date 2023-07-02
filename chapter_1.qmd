@@ -17,7 +17,7 @@ Once you have installed RStudio, launch it and let's go through the interface to
 RStudio is divided into different panes. Each pane has a specific function. The
 image below shows some of these panes:
 
-```{r}
+```{r, echo = F}
 #| label: fig-rstudio_panes
 #| fig-cap: "The different panes of RStudio."
 knitr::include_graphics("images/rstudio_panes.png")
@@ -30,8 +30,7 @@ detail in a later chapter. *Viewer* shows you previews of documents that you
 generate with R. More on this later. You can also minimize and maximize the
 panes by clicking these two buttons:
 
-
-```{r}
+```{r, echo = F}
 #| label: fig-rstudio_panes_min_max
 #| fig-cap: "Minimize or maximize the panes."
 knitr::include_graphics("images/rstudio_panes_min_max.png")
@@ -50,7 +49,7 @@ and you'll get the answer, `5`. However, do not write a lot of lines in the
 console. It is better write your code inside a script. Output is also shown
 inside the console.
 
-```{r}
+```{r, echo = F}
 #| label: fig-rstudio_console
 #| fig-cap: "You can execute code by typing it in the console."
 knitr::include_graphics("images/rstudio_console.png")
@@ -61,7 +60,7 @@ Instead of writing code in the console, it is better to write code in a so-calle
 script. Scripts are simple text files that can be written and executed by RStudio.
 To write a new script, click on the top-right icon and select "R script":
 
-```{r}
+```{r, echo = F}
 #| label: fig-rstudio_new_script
 #| fig-cap: "Select R Script to open an empty script."
 knitr::include_graphics("images/rstudio_new_script.png")
@@ -78,7 +77,7 @@ later in the book.
 
 The *Help* pane allows you to consult documentation for R, its packages etc:
 
-```{r}
+```{r, echo = F}
 #| label: fig-rstudio_help
 #| fig-cap: "Read the flipping manual."
 knitr::include_graphics("images/rstudio_help.png")
@@ -109,7 +108,7 @@ populated.
 One of the best features of RStudio are projects. Creating a project is simple;
 simply click on the top right corner of RStudio and then "New Project":
 
-```{r}
+```{r, echo = F}
 #| label: fig-rstudio_new_project
 #| fig-cap: "Here is how you create a project."
 knitr::include_graphics("images/rstudio_new_project.png")
@@ -122,3 +121,116 @@ project B, and then switch back to the project A again.
 
 You can also use version control (with Git) inside a project. Version control is
 very useful, but I won't discuss it in this book.
+
+
+## History
+
+The *History* pane saves all the previous lines you executed. You can then
+select these lines and send them back to the console or the script.
+
+```{r, echo = F}
+#| label: fig-rstudio_history
+#| fig-cap: "The history pane contains all executed lines of code."
+knitr::include_graphics("images/rstudio_history.png")
+```
+
+## Plots
+
+All the plots you make during a session are visible in the *Plots* pane. From
+there, you can export them in different formats.
+
+```{r, echo = F}
+#| label: fig-rstudio_plots
+#| fig-cap: "All the plots that you make get stored in the *plots* pane."
+knitr::include_graphics("images/rstudio_plots.png")
+```
+
+There are several ways to create plots: later in the book I will teach you
+some basics of the `{ggplot2}` package.
+
+## Addins
+
+Some packages install addins, which are accessible through the addins button:
+
+```{r, echo = F}
+#| label: fig-rstudio_addins
+#| fig-cap: "You can browse the available addins."
+knitr::include_graphics("images/rstudio_addins.png")
+```
+
+These addins make it easier to use some functions and you can read more about
+them
+[here](https://rstudio.github.io/rstudioaddins/)^[https://rstudio.github.io/rstudioaddins/].
+
+There are other panes that I will not discuss here, but you will naturally
+discover their use as you go. For example, we will discuss the *Build* pane in
+Chapter 11.
+
+## Packages
+
+You can think of packages as addons that extend R's core functionality. You can
+browse all available packages on
+[CRAN](https://cloud.r-project.org/)^[https://cloud.r-project.org/]. To make it
+easier to find what you might be interested in, you can also browse the [CRAN
+Task Views](https://cloud.r-project.org/web/views/) as mentioned previously.
+Each package has a landing page that summarises its dependencies, version number
+etc. For example, for the `{dplyr}` package:
+[https://CRAN.R-project.org/package=dplyr](https://CRAN.R-project.org/package=dplyr). To install a package, you can either type the following command in the console:
+
+```{r, eval = F}
+install.packages("dplyr")
+```
+
+or you can go to the *Packages* pane and click on the *Install* button. Before
+installing a package, you can consult its manual and *vignettes* online. For
+example, if you go back to `{dplyr}`'s landing page, you can take a look at the
+*Reference Manual* and *Vignettes*:
+
+```{r, echo = F}
+#| label: fig-dplyr_manual_vignettes
+#| fig-cap: "Always take the time to read the document of the packages you use on a daily basis."
+knitr::include_graphics("images/dplyr_manual_vignettes.png")
+```
+
+Vignettes are valuable documents; inside vignettes, the purpose of the package
+is explained in plain English, usually with accompanying examples. The reference
+manuals list the available functions inside the packages. You can also find
+vignettes from within RStudio (but you need to install the package first):
+
+```{r, echo = F}
+#| label: fig-dplyr_help_pane_manual_vignettes
+#| fig-cap: "You can consult the vignettes of installed packages."
+knitr::include_graphics("images/dplyr_help_pane_manual_vignettes.png")
+```
+
+Once you installed a package, you have to load it before you can use it. To load
+packages you use the `library()` function:
+
+```{r, eval=FALSE}
+library(dplyr)
+library(janitor)
+# and so on...
+```
+
+If you only need to use one single function once, you don't need to load an
+entire package. You can write the following:
+
+```{r, eval=FALSE}
+dplyr::full_join(A, B)
+```
+
+using the `::` operator, you can access functions from packages without having
+to load the whole package beforehand.
+
+It is possible and easy to create your own packages. This is useful if you have
+to write a lot of functions that you use daily. We will lean about that, in
+Chapter 10.
+
+## Exercises
+
+### Exercise 1 {-}
+
+Change the look and feel of RStudio to suit your tastes! I personally like to
+move the console to the right and use a dark theme. Take some 5 minutes to
+customize by clicking on *Tools* and then *Global options*. Browse through all
+the options.
