@@ -2,29 +2,71 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "A template for generating a valid EPUB, a KDP-ready PDF and a website for your book",
+    "title": "Modern R with the {tidyverse}",
     "section": "",
     "text": "Welcome!"
   },
   {
-    "objectID": "index.html#a-template-to-write-books-ready-for-self-publishing",
-    "href": "index.html#a-template-to-write-books-ready-for-self-publishing",
-    "title": "A template for generating a valid EPUB, a KDP-ready PDF and a website for your book",
-    "section": "A template to write books ready for self-publishing",
-    "text": "A template to write books ready for self-publishing\nGo to https://github.com/b-rodrigues/kdp_quarto for the source code.\nGo to https://b-rodrigues.github.io/kdp_quarto/ to visit the published website.\n\na very long line of R code that wraps in html, epub and PDF! In a pdf especially this is needed\n\n\ndata(mtcars)\nlm(mpg ~ ., data = mtcars)\n\n\nCall:\nlm(formula = mpg ~ ., data = mtcars)\n\nCoefficients:\n(Intercept)          cyl         disp           hp         drat           wt  \n   12.30337     -0.11144      0.01334     -0.02148      0.78711     -3.71530  \n       qsec           vs           am         gear         carb  \n    0.82104      0.31776      2.52023      0.65541     -0.19942  \n\n\nThis is how you can show verbatim code chunks in the output. This is using a {verbatim} chunk (check the source index.qmd):\n```{r}\na very long line of R code that wraps in html, epub and PDF! In a pdf especially this is needed\n```\nIf you want to show the triple backticks inline, you can also do so, like this: ```{r} to start an R chunk and ``` to end it. Check the source."
+    "objectID": "index.html#learn-the-r-programming-language-and-the-tidyverse-suite-of-packages",
+    "href": "index.html#learn-the-r-programming-language-and-the-tidyverse-suite-of-packages",
+    "title": "Modern R with the {tidyverse}",
+    "section": "Learn the R programming language and the {tidyverse} suite of packages",
+    "text": "Learn the R programming language and the {tidyverse} suite of packages"
   },
   {
-    "objectID": "index.html#figures",
-    "href": "index.html#figures",
-    "title": "A template for generating a valid EPUB, a KDP-ready PDF and a website for your book",
-    "section": "Figures",
-    "text": "Figures\nUse knitr::include_graphics() to include images. Check the source for how to add labels and captions:\n\nknitr::include_graphics(\"images/gosling.jpg\")\n\n\n\n\nFigure 1: Ryan Gosling looking angry.\n\n\n\n\nSee Figure 1 for a meme."
+    "objectID": "intro.html#what-is-r-what-are-packages",
+    "href": "intro.html#what-is-r-what-are-packages",
+    "title": "2  Introduction",
+    "section": "2.1 What is R? What are packages?",
+    "text": "2.1 What is R? What are packages?\nRead R’s official answer to this question here1. To make it short: R is a multi-paradigm (procedural, imperative, object-oriented and functional) programming language that focuses on applications in statistics. By statistics I mean any field that uses statistics such as official statistics, economics, finance, data science, machine learning, etc. For the sake of simplicity, I will use the word “statistics” as a general term that encompasses all these fields and disciplines for the remainder of this book. R and RStudio are the two main pieces of software that we are going to use. R is the programming language and RStudio is a modern IDE for it, made by a company called Posit (formerly the company was also called RStudio). There are several other IDEs that you can use though, but if you’re a beginner RStudio is very good choice."
   },
   {
-    "objectID": "index.html#conditional-content",
-    "href": "index.html#conditional-content",
-    "title": "A template for generating a valid EPUB, a KDP-ready PDF and a website for your book",
-    "section": "Conditional content",
-    "text": "Conditional content\nThe block below does not appear in the PDF, only on the website and Epub:\nHello, I won’t appear in the PDF!"
+    "objectID": "intro.html#why-learn-r",
+    "href": "intro.html#why-learn-r",
+    "title": "2  Introduction",
+    "section": "2.2 Why learn R?",
+    "text": "2.2 Why learn R?\nR is widely used and popular. It has been around for more than 3 decades and chances are that it will continue to stick around for many decades to come.\nTO ADD MORE STUFF\nTo start using R, simply install it. Installation is simple, but operating system dependent. To download and install R for Windows, follow this link2. For macOS, follow this one3. If you run a GNU+Linux distribution, you can install R using the system’s package manager. If you’re running Ubuntu, you might want to take a look at r2u4, which provides very fast installation of packages, full integration with apt (so dependencies get solved automatically) and covers the entirety of CRAN.\nTo use R, I recommend also installing RStudio. RStudio is a very popular text editor suited for R development. To install RStudio, look for your operating system here5. There are other popular choice to write R code, such as VS Code and Emacs (with ESS), but if you’re a beginner RStudio is a solid choice."
+  },
+  {
+    "objectID": "intro.html#who-is-this-book-for",
+    "href": "intro.html#who-is-this-book-for",
+    "title": "2  Introduction",
+    "section": "2.3 Who is this book for?",
+    "text": "2.3 Who is this book for?\nThis book can be useful to different audiences. If you have never used R in your life, and want to start, start with Chapter 1 of this book. Chapter 1 to 3 are the very basics, and should be easy to follow up to Chapter 7. Starting with Chapter 7, it gets more technical, and will be harder to follow. But I suggest you keep on going, and do not hesitate to contact me for help if you struggle! Chapter 7 is also where you can start if you are already familiar with R and the {tidyverse}, but not functional programming. If you are familiar with R but not the {tidyverse} (or have no clue what the {tidyverse} is), then you can start with Chapter 4. If you are familiar with R, the {tidyverse} and functional programming, you might still be interested in this book, especially Chapter 9 and 10, which deal with package development and further advanced topics respectively."
+  },
+  {
+    "objectID": "intro.html#why-this-book",
+    "href": "intro.html#why-this-book",
+    "title": "2  Introduction",
+    "section": "2.4 Why this book?",
+    "text": "2.4 Why this book?\nThis book is first and foremost for myself. This book is the result of years of using and teaching R at university and then at my jobs. During my university time, I wrote some notes to help me teach R and which I shared with my students. These are still the basis of Chapter 2. Then, once I had left university, and continued using R at my first “real” job, I wrote another book that dealt mostly with package development and functional programming. This book is now merged to this one and is the basis of Chapters 9 and 10. During these years at my first job, I was also tasked with teaching R. By that time, I was already quite familiar with the {tidyverse} so I wrote a lot of notes that were internal and adapted for the audience of my first job. These are now the basis of Chapters 3 to 8. Then, during all these years, I kept blogging about R, and reading blogs and further books. All this knowledge is condensed here, so if you are familiar with my blog, you’ll definitely recognize a lot of my blog posts in here. So this book is first and foremost for me, because I need to write all of this down in a central place. So because my target audience is myself, this book is free. If you find it useful, and are in the mood of buying me a coffee, you can, but if this book is not useful to you, no harm done (unless you paid for it before reading it, in which case, I am sorry to have wasted your time). But I am quite sure you’ll find some of the things written here useful, regardless of your current experience level with R."
+  },
+  {
+    "objectID": "intro.html#why-modern-r",
+    "href": "intro.html#why-modern-r",
+    "title": "2  Introduction",
+    "section": "2.5 Why modern R?",
+    "text": "2.5 Why modern R?\nModern R instead of “just” R because we are going to learn how to use modern packages (mostly those from the {tidyverse}6) and concepts, such as functional programming (which is quite an old concept actually, but one that came into fashion recently). R is derived from S, which is a programming language that has roots in FORTRAN and other languages too. If you learned R at university, you’ve probably learned to use it as you would have used FORTRAN; very long scripts where data are represented as matrices and where row-wise (or column-wise) operations are implemented with for loops. There’s nothing wrong with that, mind you, but R was also influenced by Scheme and Common Lisp, which are functional programming languages. In my opinion, functional programming is a programming paradigm that works really well when dealing with statistical problems. This is because programming in a functional style is just like writing math. For instance, suppose you want to sum all the elements of a vector. In mathematical notation, you would write something like:\n[ {i = 1}^{100} x{i} ]\nwhere \\(x\\) is a vector of length 100. Solving this using a loop would look something like this:\n\nres &lt;- 0\nfor(i in 1:length(x)){\n  res &lt;- x[i] + res\n}\n\nThis does not look like the math notation at all! You have to define a variable that will hold the result outside of the loop, and then you have to define res as something plus res inside the body of the loop. This is really unnatural. The functional programming approach is much easier:\n\nReduce(`+`, x)\n\nWe will learn about Reduce() later (to be more precise, we will learn about purrr::reduce(), the “tidy” version of Reduce()), but already you see that the notation looks a lot more like the mathematical notation.\nAt its core, functional programming uses functions, and functions are so-called first class objects in R, which means that there is nothing special about them… you can pass them to other functions, create functions that return functions and do any kind of operation on them just as with any other object. This means that functions in R are extremely powerful and flexible tools. In the first part of the book, we are going to use functions that are already available in R, and then use those available in packages, mostly those from the tidyverse. The tidyverse is a collection of packages developed by Hadley Wickham, and several of his colleagues at RStudio, Inc. By using the packages from the tidyverse and R’s built-in functional programming capabilities, we can write code that is faster and easier to explain to colleagues, and also easier to maintain. This also means that you might have to change your expectations and what you know already from R, if you learned it at University but haven’t touched it in a long time. For example for and while loops, are relegated to chapter 8. This does not mean that you will have to wait for 8 chapter to know how to repeat instructions N times, but that for and while loops are tools that are very useful for very specific situations that will be discussed at that point.\nIn the second part of the book, we are going to move from using R to solve statistical problems to developing with R. We are going to learn about creating your own package. If you do not know what packages are, don’t worry, this will be discussed just below."
+  },
+  {
+    "objectID": "intro.html#what-to-expect-from-this-book",
+    "href": "intro.html#what-to-expect-from-this-book",
+    "title": "2  Introduction",
+    "section": "2.6 What to expect from this book?",
+    "text": "2.6 What to expect from this book?\nThe idea of Chapters 1 to 7 is to make you efficient with R as quickly as possible, especially if you already have prior programming knowledge. Starting with Chapter 8 you will learn more advanced topics, especially programming with R. R is a programming language, and you can’t write “programming language” without “language”. And just as you wouldn’t expect to learn French, Portuguese or Icelandic by reading a single book, you shouldn’t expect to become fluent in R by reading a single book, not even by reading 10 books. Programming is an art which requires a lot of practice. Teach yourself programming in 10 years is a blog post written by Peter Norvig which explains that just as with any craft, mastering programming takes time. And even if you don’t need or want to become an expert in R, if you wish to use R effectively and in a way that ultimately saves you time, you need to have some fluency in it, and this only comes by continuing to learn about the language, and most importantly practicing. If you keep using R every day, you’ll definitely become very fluent. To stay informed about developments of the language, and the latest news, I advise you read blogs, especially R-bloggers which aggregates blog posts by more than 750 blogs discussing R.\nSo what you can expect from this book is that this book is not the only one you should read."
+  },
+  {
+    "objectID": "intro.html#the-author",
+    "href": "intro.html#the-author",
+    "title": "2  Introduction",
+    "section": "2.7 The author?",
+    "text": "2.7 The author?\nto add stuff"
+  },
+  {
+    "objectID": "intro.html#footnotes",
+    "href": "intro.html#footnotes",
+    "title": "2  Introduction",
+    "section": "",
+    "text": "https://cran.r-project.org/doc/FAQ/R-FAQ.html#What-is-R_003f↩︎\nhttps://cloud.r-project.org/bin/windows/base/↩︎\nhttps://cloud.r-project.org/bin/macosx/↩︎\nhttps://github.com/eddelbuettel/r2u↩︎\nhttps://posit.co/download/rstudio-desktop/↩︎\nhttps://posit.co/download/rstudio-desktop/↩︎"
   }
 ]

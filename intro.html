@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>A template for generating a valid EPUB, a KDP-ready PDF and a website for your book - 2&nbsp; Introduction</title>
+<title>Modern R with the {tidyverse} - 2&nbsp; Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -64,6 +98,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="epub.css">
 </head>
@@ -92,20 +128,20 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">A template for generating a valid EPUB, a KDP-ready PDF and a website for your book</a> 
+      <a href="./">Modern R with the {tidyverse}</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/b-rodrigues/kdp_quarto" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/b-rodrigues/modern_rstats2" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./A-template-for-generating-a-valid-EPUB,-a-KDP-ready-PDF-and-a-website-for-your-book.pdf">
+            <a class="dropdown-item sidebar-tools-main-item" href="./Modern-R-with-the-{tidyverse}.pdf">
               <i class="bi bi-bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./A-template-for-generating-a-valid-EPUB,-a-KDP-ready-PDF-and-a-website-for-your-book.epub">
+            <a class="dropdown-item sidebar-tools-main-item" href="./Modern-R-with-the-{tidyverse}.epub">
               <i class="bi bi-bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -161,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting to know RStudio</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -182,7 +218,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-r-what-are-packages" id="toc-what-is-r-what-are-packages" class="nav-link active" data-scroll-target="#what-is-r-what-are-packages"><span class="header-section-number">2.1</span> What is R? What are packages?</a></li>
+  <li><a href="#why-learn-r" id="toc-why-learn-r" class="nav-link" data-scroll-target="#why-learn-r"><span class="header-section-number">2.2</span> Why learn R?</a></li>
+  <li><a href="#who-is-this-book-for" id="toc-who-is-this-book-for" class="nav-link" data-scroll-target="#who-is-this-book-for"><span class="header-section-number">2.3</span> Who is this book for?</a></li>
+  <li><a href="#why-this-book" id="toc-why-this-book" class="nav-link" data-scroll-target="#why-this-book"><span class="header-section-number">2.4</span> Why this book?</a></li>
+  <li><a href="#why-modern-r" id="toc-why-modern-r" class="nav-link" data-scroll-target="#why-modern-r"><span class="header-section-number">2.5</span> Why <em>modern</em> R?</a></li>
+  <li><a href="#what-to-expect-from-this-book" id="toc-what-to-expect-from-this-book" class="nav-link" data-scroll-target="#what-to-expect-from-this-book"><span class="header-section-number">2.6</span> What to expect from this book?</a></li>
+  <li><a href="#the-author" id="toc-the-author" class="nav-link" data-scroll-target="#the-author"><span class="header-section-number">2.7</span> The author?</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/b-rodrigues/modern_rstats2/edit/main/intro.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -204,8 +252,66 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="what-is-r-what-are-packages" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="what-is-r-what-are-packages"><span class="header-section-number">2.1</span> What is R? What are packages?</h2>
+<p>Read R’s official answer to this question <a href="https://cran.r-project.org/doc/FAQ/R-FAQ.html#What-is-R_003f">here</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. To make it short: R is a multi-paradigm (procedural, imperative, object-oriented and functional) programming language that focuses on applications in <em>statistics</em>. By <em>statistics</em> I mean any field that uses statistics such as official statistics, economics, finance, data science, machine learning, etc. For the sake of simplicity, I will use the word “statistics” as a general term that encompasses all these fields and disciplines for the remainder of this book. R and RStudio are the two main pieces of software that we are going to use. R is the programming language and RStudio is a modern IDE for it, made by a company called Posit (formerly the company was also called RStudio). There are several other IDEs that you can use though, but if you’re a beginner RStudio is very good choice.</p>
+</section>
+<section id="why-learn-r" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="why-learn-r"><span class="header-section-number">2.2</span> Why learn R?</h2>
+<p>R is widely used and popular. It has been around for more than 3 decades and chances are that it will continue to stick around for many decades to come.</p>
+<p>TO ADD MORE STUFF</p>
+<p>To start using R, simply install it. Installation is simple, but operating system dependent. To download and install R for Windows, follow <a href="https://cloud.r-project.org/bin/windows/base/">this link</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. For macOS, follow <a href="https://cloud.r-project.org/bin/macosx/">this one</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. If you run a GNU+Linux distribution, you can install R using the system’s package manager. If you’re running Ubuntu, you might want to take a look at <a href="https://github.com/eddelbuettel/r2u">r2u</a><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, which provides very fast installation of packages, full integration with <code>apt</code> (so dependencies get solved automatically) and covers the entirety of CRAN.</p>
+<p>To use R, I recommend also installing RStudio. RStudio is a very popular text editor suited for R development. To install RStudio, look for your operating system <a href="https://posit.co/download/rstudio-desktop/">here</a><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. There are other popular choice to write R code, such as VS Code and Emacs (with ESS), but if you’re a beginner RStudio is a solid choice.</p>
+</section>
+<section id="who-is-this-book-for" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="who-is-this-book-for"><span class="header-section-number">2.3</span> Who is this book for?</h2>
+<p>This book can be useful to different audiences. If you have never used R in your life, and want to start, start with Chapter 1 of this book. Chapter 1 to 3 are the very basics, and should be easy to follow up to Chapter 7. Starting with Chapter 7, it gets more technical, and will be harder to follow. But I suggest you keep on going, and do not hesitate to contact me for help if you struggle! Chapter 7 is also where you can start if you are already familiar with R <strong>and</strong> the <code>{tidyverse}</code>, but not functional programming. If you are familiar with R but not the <code>{tidyverse}</code> (or have no clue what the <code>{tidyverse}</code> is), then you can start with Chapter 4. If you are familiar with R, the <code>{tidyverse}</code> and functional programming, you might still be interested in this book, especially Chapter 9 and 10, which deal with package development and further advanced topics respectively.</p>
+</section>
+<section id="why-this-book" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="why-this-book"><span class="header-section-number">2.4</span> Why this book?</h2>
+<p>This book is first and foremost for myself. This book is the result of years of using and teaching R at university and then at my jobs. During my university time, I wrote some notes to help me teach R and which I shared with my students. These are still the basis of Chapter 2. Then, once I had left university, and continued using R at my first “real” job, I wrote another book that dealt mostly with package development and functional programming. This book is now merged to this one and is the basis of Chapters 9 and 10. During these years at my first job, I was also tasked with teaching R. By that time, I was already quite familiar with the <code>{tidyverse}</code> so I wrote a lot of notes that were internal and adapted for the audience of my first job. These are now the basis of Chapters 3 to 8. Then, during all these years, I kept blogging about R, and reading blogs and further books. All this knowledge is condensed here, so if you are familiar with my blog, you’ll definitely recognize a lot of my blog posts in here. So this book is first and foremost for me, because I need to write all of this down in a central place. So because my target audience is myself, this book is free. If you find it useful, and are in the mood of buying me a coffee, you can, but if this book is not useful to you, no harm done (unless you paid for it before reading it, in which case, I am sorry to have wasted your time). But I am quite sure you’ll find some of the things written here useful, regardless of your current experience level with R.</p>
+</section>
+<section id="why-modern-r" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="why-modern-r"><span class="header-section-number">2.5</span> Why <em>modern</em> R?</h2>
+<p><em>Modern</em> R instead of “just” R because we are going to learn how to use modern packages (mostly those from the <a href="https://www.tidyverse.org/">{tidyverse}</a><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>) and concepts, such as functional programming (which is quite an old concept actually, but one that came into fashion recently). R is derived from S, which is a programming language that has roots in FORTRAN and other languages too. If you learned R at university, you’ve probably learned to use it as you would have used FORTRAN; very long scripts where data are represented as matrices and where row-wise (or column-wise) operations are implemented with <code>for</code> loops. There’s nothing wrong with that, mind you, but R was also influenced by Scheme and Common Lisp, which are functional programming languages. In my opinion, functional programming is a programming paradigm that works really well when dealing with statistical problems. This is because programming in a functional style is just like writing math. For instance, suppose you want to sum all the elements of a vector. In mathematical notation, you would write something like:</p>
+<p>[ <em>{i = 1}^{100} x</em>{i} ]</p>
+<p>where <span class="math inline">\(x\)</span> is a vector of length 100. Solving this using a loop would look something like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> x[i] <span class="sc">+</span> res</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This does not look like the math notation at all! You have to define a variable that will hold the result outside of the loop, and then you have to define <code>res</code> as something plus <code>res</code> inside the body of the loop. This is really unnatural. The functional programming approach is much easier:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Reduce</span>(<span class="st">`</span><span class="at">+</span><span class="st">`</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We will learn about <code>Reduce()</code> later (to be more precise, we will learn about <code>purrr::reduce()</code>, the “tidy” version of <code>Reduce()</code>), but already you see that the notation looks a lot more like the mathematical notation.</p>
+<p>At its core, functional programming uses functions, and functions are so-called <em>first class</em> objects in R, which means that there is nothing special about them… you can pass them to other functions, create functions that return functions and do any kind of operation on them just as with any other object. This means that functions in R are extremely powerful and flexible tools. In the first part of the book, we are going to use functions that are already available in R, and then use those available in packages, mostly those from the <code>tidyverse</code>. The <code>tidyverse</code> is a collection of packages developed by <a href="http://hadley.nz/">Hadley Wickham</a>, and several of his colleagues at RStudio, Inc.&nbsp;By using the packages from the <code>tidyverse</code> and R’s built-in functional programming capabilities, we can write code that is faster and easier to explain to colleagues, and also easier to maintain. This also means that you might have to change your expectations and what you know already from R, if you learned it at University but haven’t touched it in a long time. For example for and while loops, are relegated to chapter 8. This does not mean that you will have to wait for 8 chapter to know how to repeat instructions <em>N</em> times, but that <em>for</em> and <em>while</em> loops are tools that are very useful for very specific situations that will be discussed at that point.</p>
+<p>In the second part of the book, we are going to move from using R to solve statistical problems to developing with R. We are going to learn about creating your own package. If you do not know what packages are, don’t worry, this will be discussed just below.</p>
+</section>
+<section id="what-to-expect-from-this-book" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="what-to-expect-from-this-book"><span class="header-section-number">2.6</span> What to expect from this book?</h2>
+<p>The idea of Chapters 1 to 7 is to make you efficient with R as quickly as possible, especially if you already have prior programming knowledge. Starting with Chapter 8 you will learn more advanced topics, especially programming with R. R is a programming language, and you can’t write “programming language” without “language”. And just as you wouldn’t expect to learn French, Portuguese or Icelandic by reading a single book, you shouldn’t expect to become fluent in R by reading a single book, not even by reading 10 books. Programming is an art which requires a lot of practice. <a href="http://www.norvig.com/21-days.html">Teach yourself programming in 10 years</a> is a blog post written by Peter Norvig which explains that just as with any craft, mastering programming takes time. And even if you don’t need or want to become an expert in R, if you wish to use R effectively and in a way that ultimately saves you time, you need to have some fluency in it, and this only comes by continuing to learn about the language, and most importantly practicing. If you keep using R every day, you’ll definitely become very fluent. To stay informed about developments of the language, and the latest news, I advise you read blogs, especially <a href="https://www.r-bloggers.com/">R-bloggers</a> which aggregates blog posts by more than 750 blogs discussing R.</p>
+<p>So what you can expect from this book is that this book is not the only one you should read.</p>
+</section>
+<section id="the-author" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="the-author"><span class="header-section-number">2.7</span> The author?</h2>
+<p>to add stuff</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>https://cran.r-project.org/doc/FAQ/R-FAQ.html#What-is-R_003f<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>https://cloud.r-project.org/bin/windows/base/<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>https://cloud.r-project.org/bin/macosx/<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>https://github.com/eddelbuettel/r2u<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>https://posit.co/download/rstudio-desktop/<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>https://posit.co/download/rstudio-desktop/<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -564,7 +670,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./chapter_1.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 1</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting to know RStudio</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -572,4 +678,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/b-rodrigues/kdp_quarto/edit/main/intro.qmd" class="toc-action">Edit this page</a></p></div></div></div></div></footer></body></html>
+</body></html>
