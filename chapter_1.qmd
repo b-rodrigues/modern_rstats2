@@ -1,1 +1,1 @@
-# Chapter 1
+# Getting to know RStudio

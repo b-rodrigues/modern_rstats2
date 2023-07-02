@@ -2,11 +2,11 @@ project:
   type: book
 
 book:
-  title: "A template for generating a valid EPUB, a KDP-ready PDF and a website for your book"
+  title: "Modern R with the {tidyverse}"
   author: "Bruno Rodrigues"
-  date: "2023-06-28"
+  date: "2023-07-02"
   search: true
-  repo-url: "https://github.com/b-rodrigues/kdp_quarto"
+  repo-url: "https://github.com/b-rodrigues/modern_rstats2"
   repo-actions: [edit]
   sharing: [twitter, facebook]
   downloads: [pdf, epub]
