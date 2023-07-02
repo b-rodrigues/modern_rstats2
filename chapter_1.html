@@ -228,6 +228,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#the-environment-pane" id="toc-the-environment-pane" class="nav-link" data-scroll-target="#the-environment-pane"><span class="header-section-number">3.3.2</span> The Environment pane</a></li>
   </ul></li>
   <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects"><span class="header-section-number">3.4</span> Projects</a></li>
+  <li><a href="#history" id="toc-history" class="nav-link" data-scroll-target="#history"><span class="header-section-number">3.5</span> History</a></li>
+  <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots"><span class="header-section-number">3.6</span> Plots</a></li>
+  <li><a href="#addins" id="toc-addins" class="nav-link" data-scroll-target="#addins"><span class="header-section-number">3.7</span> Addins</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span class="header-section-number">3.8</span> Packages</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">3.9</span> Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/b-rodrigues/modern_rstats2/edit/main/chapter_1.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -257,7 +265,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="3.1" class="anchored" data-anchor-id="panes"><span class="header-section-number">3.1</span> Panes</h2>
 <p>RStudio is divided into different panes. Each pane has a specific function. The image below shows some of these panes:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rstudio_panes.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-rstudio_panes" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -269,7 +276,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Take some time to look around what each pane shows you. Some panes are empty; for example the <em>Plots</em> pane or the <em>Viewer</em> pane. <em>Plots</em> shows you the plots you make. You can browse the plots and save them. We will see this in more detail in a later chapter. <em>Viewer</em> shows you previews of documents that you generate with R. More on this later. You can also minimize and maximize the panes by clicking these two buttons:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rstudio_panes_min_max.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-rstudio_panes_min_max" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -284,11 +290,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="3.2" class="anchored" data-anchor-id="console"><span class="header-section-number">3.2</span> Console</h2>
 <p>The <em>Console</em> pane is where you can execute R code. Write the following in the console:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>and you’ll get the answer, <code>5</code>. However, do not write a lot of lines in the console. It is better write your code inside a script. Output is also shown inside the console.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rstudio_console.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-rstudio_console" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -303,7 +308,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="3.3" class="anchored" data-anchor-id="scripts"><span class="header-section-number">3.3</span> Scripts</h2>
 <p>Instead of writing code in the console, it is better to write code in a so-called script. Scripts are simple text files that can be written and executed by RStudio. To write a new script, click on the top-right icon and select “R script”:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rstudio_new_script.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-rstudio_new_script" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -318,7 +322,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="the-help-pane"><span class="header-section-number">3.3.1</span> The help pane</h3>
 <p>The <em>Help</em> pane allows you to consult documentation for R, its packages etc:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rstudio_help.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-rstudio_help" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -341,7 +344,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="3.4" class="anchored" data-anchor-id="projects"><span class="header-section-number">3.4</span> Projects</h2>
 <p>One of the best features of RStudio are projects. Creating a project is simple; simply click on the top right corner of RStudio and then “New Project”:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rstudio_new_project.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-rstudio_new_project" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -353,8 +355,101 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Projects make a lot of things easier, such as managing paths (more on this in the chapter about reading data). Another useful feature of projects is that the scripts you open in project A will stay open even if you switch to another project B, and then switch back to the project A again.</p>
 <p>You can also use version control (with Git) inside a project. Version control is very useful, but I won’t discuss it in this book.</p>
+</section>
+<section id="history" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="history"><span class="header-section-number">3.5</span> History</h2>
+<p>The <em>History</em> pane saves all the previous lines you executed. You can then select these lines and send them back to the console or the script.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-rstudio_history" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/rstudio_history.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.7: The history pane contains all executed lines of code.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="plots" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="plots"><span class="header-section-number">3.6</span> Plots</h2>
+<p>All the plots you make during a session are visible in the <em>Plots</em> pane. From there, you can export them in different formats.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-rstudio_plots" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/rstudio_plots.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.8: All the plots that you make get stored in the <em>plots</em> pane.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>There are several ways to create plots: later in the book I will teach you some basics of the <code>{ggplot2}</code> package.</p>
+</section>
+<section id="addins" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="addins"><span class="header-section-number">3.7</span> Addins</h2>
+<p>Some packages install addins, which are accessible through the addins button:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-rstudio_addins" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/rstudio_addins.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.9: You can browse the available addins.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>These addins make it easier to use some functions and you can read more about them <a href="https://rstudio.github.io/rstudioaddins/">here</a><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<p>There are other panes that I will not discuss here, but you will naturally discover their use as you go. For example, we will discuss the <em>Build</em> pane in Chapter 11.</p>
+</section>
+<section id="packages" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="packages"><span class="header-section-number">3.8</span> Packages</h2>
+<p>You can think of packages as addons that extend R’s core functionality. You can browse all available packages on <a href="https://cloud.r-project.org/">CRAN</a><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. To make it easier to find what you might be interested in, you can also browse the <a href="https://cloud.r-project.org/web/views/">CRAN Task Views</a> as mentioned previously. Each package has a landing page that summarises its dependencies, version number etc. For example, for the <code>{dplyr}</code> package: <a href="https://CRAN.R-project.org/package=dplyr">https://CRAN.R-project.org/package=dplyr</a>. To install a package, you can either type the following command in the console:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>or you can go to the <em>Packages</em> pane and click on the <em>Install</em> button. Before installing a package, you can consult its manual and <em>vignettes</em> online. For example, if you go back to <code>{dplyr}</code>’s landing page, you can take a look at the <em>Reference Manual</em> and <em>Vignettes</em>:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-dplyr_manual_vignettes" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/dplyr_manual_vignettes.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.10: Always take the time to read the document of the packages you use on a daily basis.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Vignettes are valuable documents; inside vignettes, the purpose of the package is explained in plain English, usually with accompanying examples. The reference manuals list the available functions inside the packages. You can also find vignettes from within RStudio (but you need to install the package first):</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-dplyr_help_pane_manual_vignettes" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/dplyr_help_pane_manual_vignettes.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.11: You can consult the vignettes of installed packages.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Once you installed a package, you have to load it before you can use it. To load packages you use the <code>library()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># and so on...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you only need to use one single function once, you don’t need to load an entire package. You can write the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">full_join</span>(A, B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>using the <code>::</code> operator, you can access functions from packages without having to load the whole package beforehand.</p>
+<p>It is possible and easy to create your own packages. This is useful if you have to write a lot of functions that you use daily. We will lean about that, in Chapter 10.</p>
+</section>
+<section id="exercises" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3.9</span> Exercises</h2>
+<section id="exercise-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<p>Change the look and feel of RStudio to suit your tastes! I personally like to move the console to the right and use a dark theme. Take some 5 minutes to customize by clicking on <em>Tools</em> and then <em>Global options</em>. Browse through all the options.</p>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
@@ -363,6 +458,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li id="fn2"><p>https://shiny.posit.co/r/getstarted/next-steps/<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>https://cran.r-project.org/web/views/Econometrics.html<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>https://cran.r-project.org/web/views/<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>https://rstudio.github.io/rstudioaddins/<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>https://cloud.r-project.org/<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
